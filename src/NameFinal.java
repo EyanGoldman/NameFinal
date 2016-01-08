@@ -1,4 +1,6 @@
 
 public class NameFinal {
-//helloo0
+	public static void main(String[] args) {
+		
+	}
 }
