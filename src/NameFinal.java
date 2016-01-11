@@ -4,12 +4,12 @@ public class NameFinal {
 		Scanner scan = new Scanner(System.in);
 		char[] input = scan.nextLine().toCharArray();
 		hyphen(input);
-		System.out.println(hyphen(input));
+		System.out.println(palindrome(input));
 		System.out.println("new changes");
 
 	}
 	//marco
-	static char[] reverse() 
+	static char[] reverse()
 	{
 		return null;
 	}
@@ -92,7 +92,22 @@ public class NameFinal {
 	}
 	static boolean palindrome(char[] input)
 	{
-		return false;
+		char[] reversed = new char[input.length];
+		int a = 0;
+		boolean works = true;
+		for (int i = input.length-1; i >= 0; i--) 
+		{
+			reversed[a] = input[i];
+			a++;
+		}
+		for (int i = 0; i < reversed.length; i++) 
+		{
+			if (input[i] != reversed[i])
+			{
+				works = false;
+			}
+		}
+		return works;
 	}
 	static char[] sorted()
 	{
