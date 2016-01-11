@@ -14,10 +14,14 @@ public class NameFinal {
 		return null;
 	}
 	//damon
-	static int vowel()
-	{
-		return 0;
-		//REAL ACTUAL CHANGES
+	static int vowel(char[] charray){
+		int vowelnum = 0;
+		for(int i = 0; i < charray.length; i++){
+			if(charray[i] == 'a' || charray[i] == 'e' || charray[i] == 'i' || charray[i] == 'o' || charray[i] == 'u' || charray[i] == 'A' || charray[i] == 'E' || charray[i] == 'I' || charray[i] == 'O' || charray[i] == 'U'){
+				vowelnum++;
+			}
+		}
+		return vowelnum;
 	}
 	//Nicky
 	static int consonentFrequency(char[] input) 
@@ -46,13 +50,24 @@ public class NameFinal {
 		return consonents;
 	}
 	//Ryan
-	static String firstName()
+	static char[] firstName()
 	{
 		return null;
 	}
-	static String lastName()
+	static char[] lastName(char [] charray)
 	{
-		return null;
+		int spacenum = charray.length;
+		for (int i = charray.length - 1; i > 0; i--) {
+			if (charray[i] == ' '){
+				spacenum = charray.length - i;
+				break;
+			}
+		}
+		char[] lastname = new char[spacenum-1];
+		for (int i = 0; i < lastname.length; i++) {
+			lastname[i] = charray[charray.length - spacenum + i + 1];
+		}
+		return lastname;
 	}
 	static String middleName()
 	{
