@@ -93,13 +93,21 @@ public class NameFinal {
 			return true;
 		}
 	}
-	static char[] lowerCase()
+	static char[] lowerCase(char[] charray)
 	{
-		return null;
+		char[] copy = charray;
+		for(int i = 0; i <charray.length; i++){
+			if(copy[i]>=65 && copy[i]<=90) copy[i]+=32;
+		}
+		return copy;
 	}
-	static char[] upperCase()
+	static char[] upperCase(char[] charray)
 	{
-		return null;
+		char[] copy = charray;
+		for(int i = 0; i <charray.length; i++){
+			if(copy[i]>=97 && copy[i]<=122) copy[i]-=32;
+		}
+		return copy;
 	}
 	static char[] random()
 	{
