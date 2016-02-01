@@ -9,7 +9,6 @@ public class NameFinal {
 		System.out.println(sorted(input));
 
 		System.out.println("new changes");
-
 	}
 	//marco 
 	static char[] reverse(char [] charray){
@@ -39,8 +38,8 @@ public class NameFinal {
 		{
 			if(input[i]!='a' && input[i]!= 'A' && input[i]!= 'e' && input[i]!='E' && input[i]!='i' && input[i]!= 'I' 
 					&& input[i]!= 'o' && input[i]!= 'O' && input[i]!= 'u' && input[i]!= 'U')
-			/*
-			 
+				/*
+
 			 		input[i] == 'b' || input[i] == 'B' || input[i] == 'c' || input[i] == 'C' || input[i] == 'd' || 
 					input[i] == 'D' || input[i] == 'f' || input[i] == 'F' || input[i] == 'g' || input[i] == 'G' 
 					|| input[i] == 'h' || input[i] == 'H' || input[i] == 'j' || input[i] == 'J' || input[i] == 'k' 
@@ -50,7 +49,7 @@ public class NameFinal {
 					|| input[i] == 't' || input[i] == 'T' || input[i] == 'v' || input[i] == 'V' || input[i] == 'w' 
 					|| input[i] == 'W' || input[i] == 'x' || input[i] == 'X' || input[i] == 'y' || input[i] == 'Y' 
 					|| input[i] == 'z' || input[i] == 'Z'
-			 */
+				 */
 			{
 				consonents++;
 			}
@@ -202,5 +201,43 @@ public class NameFinal {
 	{
 		return null;
 	}
+<<<<<<< HEAD
+	static char[] mockery(char[] charray){
+		boolean[] tbr = new boolean[charray.length];
+		boolean streak = true;
+		int totalstreaks = 1;
+		for (int i = 0; i < charray.length; i++) {
+			if (streak && !(charray[i] == 'a' || charray[i] == 'e' || charray[i] == 'i' || charray[i] == 'o' || charray[i] == 'u' || charray[i] == 'A' || charray[i] == 'E' || charray[i] == 'I' || charray[i] == 'O' || charray[i] == 'U')){
+				tbr[i] = true;
+			}
+			else
+				streak = false;
+			if (charray[i]==' ' || i == 0){
+				totalstreaks++;
+				tbr[i] = true;
+				streak = true;
+			}
+		}
+		int totalreplaced = 0;
+		for (int i = 0; i < tbr.length; i++) {
+			if(tbr[i])
+				totalreplaced++;
+		}
+		//		char[] finalarray = new char[charray.length - totalreplaced + (totalstreaks*3) - 1];
+		char[] finalarray = new char[charray.length - totalreplaced];
+		int skipped = 0;
+		for (int i = 0; i+skipped < finalarray.length; i++) {
+			if(tbr[i+skipped]){
+				i--;
+				skipped++;
+			}
+			else{
+				finalarray[i] = charray[i+skipped];
+			}
+		}
+		return null;
+	}
+=======
 	static void 
+>>>>>>> 6bcabaf7ef49d56eac54c6121f7956a833784a6a
 }
