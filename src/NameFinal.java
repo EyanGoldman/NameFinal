@@ -8,10 +8,15 @@ public class NameFinal {
 		System.out.println("new changes");
 
 	}
-	//marco
-	static char[] reverse()
-	{
-		return null;
+	//marco 
+	static char[] reverse(char [] charray){
+		int indx = 0;
+		char[] reverse = new char[charray.length];
+		for (int i = charray.length - 1; i >= 0; i--) {
+		   reverse[indx] = charray[i];
+		   indx++;
+		}
+		return reverse;	
 	}
 	//damon
 	static int vowel(char[] charray){
@@ -148,5 +153,5 @@ public class NameFinal {
 	{
 		return null;
 	}
-
+	static void 
 }
