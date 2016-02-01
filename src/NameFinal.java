@@ -5,11 +5,13 @@ public class NameFinal {
 		Scanner scan = new Scanner(System.in);
 		char[] input = scan.nextLine().toCharArray();
 		hyphen(input);
-		System.out.println(random(input));
+
+		System.out.println(sorted(input));
+
 		System.out.println("new changes");
 	}
 	//marco
-	static char[] reverse() 
+	static char[] reverse()
 	{
 		return null;
 	}
@@ -130,28 +132,49 @@ public class NameFinal {
 	}
 	static boolean palindrome(char[] input)
 	{
-		return false;
+		char[] reversed = new char[input.length];
+		int a = 0;
+		boolean works = true;
+		for (int i = input.length-1; i >= 0; i--) 
+		{
+			reversed[a] = input[i];
+			a++;
+		}
+		for (int i = 0; i < reversed.length; i++) 
+		{
+			if (input[i] != reversed[i])
+			{
+				works = false;
+			}
+		}
+		return works;
 	}
 	static char[] sorted(char[] array)
 	{
 		int[] intarray = new int[array.length];
-		int[] charray = new int[array.length];
+		char[] charray = new char[array.length];
 		boolean[] alreadyused = new boolean[array.length];
-		
+
 		int least = 10000;
 		for (int i = 0; i < array.length; i++) {
 			intarray[i] = (int) array[i];
 		}
-		for (int i = 0; i < intarray.length; i++) {
+
+		for (int i = 0; i < charray.length; i++) {
+			int jay = 10000;
 			least = 10000;
 			for (int j = 0; j < intarray.length; j++) {
 				if(!alreadyused[j]){
-					
+					if(intarray[j]<least){
+						least = intarray[j];
+						jay = j;
+					}
 				}
 			}
-			alreadyused[i] = true;
+			charray[i] = (char) least;
+			alreadyused[jay] = true;
 		}
-		//return charray;
+		return charray;
 	}
 	static char[] initials()
 	{
@@ -165,5 +188,39 @@ public class NameFinal {
 	{
 		return null;
 	}
-
+	static char[] mockery(char[] charray){
+		boolean[] tbr = new boolean[charray.length];
+		boolean streak = true;
+		int totalstreaks = 1;
+		for (int i = 0; i < charray.length; i++) {
+			if (streak && !(charray[i] == 'a' || charray[i] == 'e' || charray[i] == 'i' || charray[i] == 'o' || charray[i] == 'u' || charray[i] == 'A' || charray[i] == 'E' || charray[i] == 'I' || charray[i] == 'O' || charray[i] == 'U')){
+				tbr[i] = true;
+			}
+			else
+				streak = false;
+			if (charray[i]==' ' || i == 0){
+				totalstreaks++;
+				tbr[i] = true;
+				streak = true;
+			}
+		}
+		int totalreplaced = 0;
+		for (int i = 0; i < tbr.length; i++) {
+			if(tbr[i])
+				totalreplaced++;
+		}
+		//		char[] finalarray = new char[charray.length - totalreplaced + (totalstreaks*3) - 1];
+		char[] finalarray = new char[charray.length - totalreplaced];
+		int skipped = 0;
+		for (int i = 0; i+skipped < finalarray.length; i++) {
+			if(tbr[i+skipped]){
+				i--;
+				skipped++;
+			}
+			else{
+				finalarray[i] = charray[i+skipped];
+			}
+		}
+		return null;
+	}
 }
